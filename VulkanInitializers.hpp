@@ -113,6 +113,18 @@ namespace vks
 			imageCreateInfo.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
 			return imageCreateInfo;
 		}
+		
+		inline VkImageCreateInfo image2DCreateInfo(
+			VkFormat format,
+			uint32_t width,
+			uint32_t height)
+		{
+			VkImageCreateInfo imageCreateInfo {};
+			imageCreateInfo.sType = VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO;
+			imageCreateInfo.imageType = VK_IMAGE_TYPE_2D;
+			imageCreateInfo.extent = { width, height, 1 };
+			return imageCreateInfo;
+		}
 
 		inline VkSamplerCreateInfo samplerCreateInfo()
 		{
